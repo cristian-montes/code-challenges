@@ -27,4 +27,14 @@ export function namesOnly(arr){
   
 }
 
-// MAKES STRINGSq
+// MAKES STRINGS
+export function makeStrings(arr){
+    const names = arr.map((famousNames) => {
+        if(famousNames.age > 18){
+           return `${famousNames.name} can go to The Matrix`;
+        } else {
+            return `${famousNames.name} is under age!!`;
+        }
+    })
+    return names;
+}
