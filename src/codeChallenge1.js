@@ -38,3 +38,11 @@ export function makeStrings(arr){
     })
     return names;
 }
+
+//MAKE HEADERS
+export function readyToPutInTheDOM(arr){
+    return arr.map((famousNames) => {
+        return `<h1>${famousNames.name}</h1><h2>${famousNames.age}</h2>`;
+    })
+}
+
