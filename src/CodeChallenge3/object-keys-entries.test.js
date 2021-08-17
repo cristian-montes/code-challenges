@@ -1,6 +1,6 @@
-import { sortedKeys } from './object-keys-entries.js';
+import { sortedKeys, getFilteredKey } from './object-keys-entries.js';
 
-test('it capitalizes the keys', () => {
+test('it sorts keys', () => {
   const dataObject = { 
             name: 'Spot', 
             age: 3, 
@@ -11,3 +11,14 @@ test('it capitalizes the keys', () => {
   const output = sortedKeys(dataObject); //act
   expect(output).toEqual(['age', 'name', 'isDog', 'friends']); //assert
 });
+
+test('it gets the key age', () => {
+    const dataObject = { 
+        name: 'Angelina Jolie', 
+        isSpot: false, 
+        age: 80, 
+    }
+  ; //arrange
+    const output = getFilteredKey(dataObject); //act
+    expect(output).toEqual(['age']); //assert
+  });
