@@ -13,3 +13,16 @@ export function updateNumbers(obj) {
     }
     return newArr;
 }
+
+export function totalCharacters(arr) {
+    let newArr= [];
+   const names = arr.map((item) => {      
+        newArr.push(item.name, item.spouse);  
+        item.children.map(kid => newArr.push(kid)) 
+    });
+    // const spouses = arr.map((item) => {      
+    //     return newArr.push(item.spouse);   
+    //   })
+    console.log(newArr.length)
+    return newArr;
+}
