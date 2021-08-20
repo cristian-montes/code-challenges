@@ -9,9 +9,6 @@ export function getHouses(obj) {
     return casas;
 }
 
-
-
-
 export function updateNumbers(obj) { 
     let newArr = []
     for(let [key, value] of Object.entries(obj)){
