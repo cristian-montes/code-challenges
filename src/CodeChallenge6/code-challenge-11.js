@@ -14,14 +14,28 @@ export function totalSum(matrix) {
  return flatttie.reduce((a ,b) => a+b)
 }
 
-
-
 export function grandTotal(stores){
-    const hoursOpen = ['9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.', '8 p.m.'];
-
-    return stores.map((subArr) => {
-        for(let item of subArr){
-            return item;
-        }
-    })
+  return stores.reduce((acc,curr) =>{
+     return curr.map((b,i)=>{
+         return (acc[i] || 0) + b;
+     })
+  }, [])
 }
+
+// export function grandTotal(stores){
+//     return stores.reduce((r,a) =>{
+//         a.forEach((b, i)=> {
+//             r[i]=(r[i] || 0) + b;
+//         })
+//         return r;
+//     }, [])
+//   }
+
+
+
+
+
+
+
+   
+    
