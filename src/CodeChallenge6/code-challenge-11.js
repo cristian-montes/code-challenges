@@ -22,14 +22,6 @@ export function grandTotal(stores){
   }, [])
 }
 
-// export function grandTotal(stores){
-//     return stores.reduce((r,a) =>{
-//         a.forEach((b, i)=> {
-//             r[i]=(r[i] || 0) + b;
-//         })
-//         return r;
-//     }, [])
-//   }
 
 
 
