@@ -1,4 +1,4 @@
-import { returnTen,findMax,totalSum, grandTotal } from './code-challenge-11';
+import { returnTen,findMax,totalSum, grandTotal, salesData} from './code-challenge-11';
 
   test('it should return the last 10 characters of a string as an array', () => {
     expect(returnTen('hello world')).toStrictEqual(['e','l','l','o',' ','w','o','r','l','d']);
@@ -13,7 +13,7 @@ import { returnTen,findMax,totalSum, grandTotal } from './code-challenge-11';
     expect(totalSum([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(81);
   });
 
-  
+  const hoursOpen = ['9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.', '8 p.m.'];
 
   const firstPike =     [17, 18, 23, 24, 24, 12, 13, 27, 30, 20, 24, 18];
   const seaTac =        [26, 5, 5, 59, 23, 39, 38, 20, 30, 7, 59, 43];
@@ -25,4 +25,25 @@ import { returnTen,findMax,totalSum, grandTotal } from './code-challenge-11';
   
   test('it returns the total sum of coockies sould each hour for all stores', () => {
     expect(grandTotal(cookieStores)).toStrictEqual([88, 153, 252, 286, 139, 161, 145, 232, 276, 207, 161, 169]);
+  });
+
+
+  test('salesData function', () => {
+
+    expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
+      { sales: '88 cookies', time: '9 a.m.' },
+      { sales: '153 cookies', time: '10 a.m.' },
+      { sales: '252 cookies', time: '11 a.m.' },
+      { sales: '286 cookies', time: '12 p.m.' },
+      { sales: '139 cookies', time: '1 p.m.' },
+      { sales: '161 cookies', time: '2 p.m.' },
+      { sales: '145 cookies', time: '3 p.m.' },
+      { sales: '232 cookies', time: '4 p.m.' },
+      { sales: '276 cookies', time: '5 p.m.' },
+      { sales: '207 cookies', time: '6 p.m.' },
+      { sales: '161 cookies', time: '7 p.m.' },
+      { sales: '169 cookies', time: '8 p.m.' }
+    ]);
+    
+    expect(salesData(hoursOpen, grandTotal(cookieStores)).length).toStrictEqual(hoursOpen.length);
   });
