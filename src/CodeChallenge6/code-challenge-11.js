@@ -22,12 +22,13 @@ export function grandTotal(stores){
   }, [])
 }
 
+export function salesData(hours, total){
+    return total.map( (x, i) => {
+        return {sales: `${x} cookies`, time: hours[i]};
+    })
+}
 
 
 
 
-
-
-
-   
     
